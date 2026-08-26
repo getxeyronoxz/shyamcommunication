@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shyam Communication: smartphones, accessories, mobile repair and recharge in Milak, Rampur." />
+  <title>Shyam Communication | Your next phone, sorted.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:oklch(20% .025 325);--soft:oklch(43% .025 325);--paper:oklch(97% .012 72);--warm:oklch(93% .035 70);--line:oklch(83% .025 72);--gold:oklch(74% .16 65);--gold-deep:oklch(54% .15 50);--brick:oklch(55% .14 29);--plum:oklch(37% .09 325);--mint:oklch(86% .06 155);--ease:cubic-bezier(.16,1,.3,1);--shadow:0 22px 60px oklch(20% .025 325 / .13)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 'DM Sans',system-ui,sans-serif}a{text-decoration:none;color:inherit}button{font:inherit}h1,h2,h3,p{margin:0}h1,h2,h3{ text-wrap:balance}h1,h2{font-family:Fraunces,Georgia,serif;line-height:.97;letter-spacing:-.045em}h1{font-size:clamp(3.4rem,8vw,7rem)}h2{font-size:clamp(2.5rem,5vw,4.8rem)}h3{line-height:1.1}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.muted{color:var(--soft)}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold-deep);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.eyebrow:before{content:'';width:27px;height:2px;background:var(--gold)}
+    .announce{background:var(--plum);color:var(--paper);padding:9px 0;font-size:.78rem}.announce .wrap{display:flex;justify-content:space-between;gap:15px}.announce strong{color:var(--gold)}
+    nav{position:sticky;top:0;z-index:10;background:oklch(97% .012 72 / .94);border-bottom:1px solid var(--line);backdrop-filter:blur(13px)}.navin{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.04em}.mark{width:36px;height:36px;display:grid;place-items:center;border-radius:12px 12px 12px 3px;background:var(--gold);color:var(--plum);font:1.4rem Fraunces}.brand small{display:block;color:var(--soft);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}.links{display:flex;align-items:center;gap:28px;color:var(--soft);font-size:.9rem}.links a:hover{color:var(--brick)}.cta,.btn{min-height:47px;padding:0 20px;border:0;border-radius:999px;background:var(--ink);color:var(--paper);display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;cursor:pointer;transition:transform .25s var(--ease),background .2s,box-shadow .2s}.cta:hover,.btn:hover{transform:translateY(-3px);background:var(--brick);box-shadow:0 10px 22px oklch(20% .025 325 / .12)}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}.btn.ghost:hover{background:var(--ink);color:var(--paper)}.hamb{display:none;background:none;border:0;font-size:1.5rem}
+    .hero{overflow:hidden;position:relative;padding:94px 0 110px}.hero:before{content:'';position:absolute;width:650px;height:650px;right:-250px;top:-80px;border-radius:50%;background:var(--gold);opacity:.6}.hero:after{content:'';position:absolute;width:270px;height:270px;right:210px;bottom:15px;border-radius:50%;background:var(--mint);opacity:.85}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:65px}.hero p{max-width:52ch;margin-top:27px;color:var(--soft);font-size:1.1rem}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.proof{display:flex;flex-wrap:wrap;gap:22px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line);color:var(--soft);font-size:.86rem}.proof span{display:flex;align-items:center;gap:8px}.dot{width:8px;height:8px;background:var(--mint);border-radius:50%;box-shadow:0 0 0 4px oklch(86% .06 155 / .3)}
+    .showcase{position:relative;min-height:490px;display:grid;place-items:center}.phone{width:238px;height:455px;position:relative;z-index:2;border:8px solid var(--ink);border-radius:37px;background:var(--plum);box-shadow:20px 26px 0 var(--gold),var(--shadow);transform:rotate(7deg);overflow:hidden}.phone:before{content:'';position:absolute;top:9px;left:50%;transform:translateX(-50%);width:82px;height:21px;border-radius:0 0 17px 17px;background:var(--ink);z-index:3}.screen{height:100%;padding:66px 21px 21px;color:var(--paper);background:radial-gradient(circle at 80% 14%,var(--gold) 0 14%,transparent 15%),radial-gradient(circle at 17% 78%,var(--brick) 0 22%,transparent 23%),var(--plum)}.screen h3{font:1.72rem/1 Fraunces,serif}.screen-line{width:78px;height:5px;margin-top:12px;border-radius:5px;background:var(--gold)}.screen-phone{position:absolute;top:168px;left:49px;width:120px;height:181px;border:5px solid var(--paper);border-radius:18px;transform:rotate(-12deg)}.screen-phone:before{content:'';position:absolute;top:12px;left:25px;width:61px;height:4px;border-radius:5px;background:var(--paper)}.screen-phone:after{content:'SC';position:absolute;inset:47px 0 0;display:grid;place-items:center;color:var(--gold);font:2.8rem Fraunces}.screen-tag{position:absolute;bottom:25px;left:20px;right:20px;padding:10px;border-radius:12px;background:var(--paper);color:var(--plum);font-size:.67rem;font-weight:700}.note{position:absolute;right:-2px;bottom:35px;z-index:3;width:188px;padding:17px;border-radius:4px 18px 18px 18px;background:var(--paper);box-shadow:0 12px 28px oklch(20% .025 325 / .14);font-size:.8rem;transform:rotate(-4deg)}.note b{display:block;margin-bottom:3px;font:1.1rem Fraunces,serif}
+    section{padding:108px 0}.head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:38px}.head h2{max-width:560px}.head p{max-width:35ch;color:var(--soft)}.catalog{background:var(--warm)}.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:23px}.filter{padding:10px 15px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--soft);cursor:pointer;font-size:.84rem}.filter[aria-pressed=true],.filter:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product{min-height:266px;display:flex;flex-direction:column;justify-content:space-between;padding:18px;background:var(--paper);border:1px solid var(--line);border-radius:18px;transition:transform .3s var(--ease),box-shadow .3s}.product:hover{transform:translateY(-6px);box-shadow:0 13px 28px oklch(20% .025 325 / .1)}.visual{height:137px;display:grid;place-items:center;border-radius:12px;background:var(--warm);color:var(--plum)}.shape{position:relative;width:60px;height:94px;border:4px solid currentColor;border-radius:14px}.shape:before{content:'';position:absolute;top:8px;left:50%;width:19px;height:4px;transform:translateX(-50%);border-radius:3px;background:currentColor}.shape:after{content:'✦';position:absolute;inset:25px 0 0;display:grid;place-items:center;color:var(--gold-deep);font-size:1.3rem}.product:nth-child(2) .visual{color:var(--brick)}.product:nth-child(2) .shape{width:90px;height:50px;border-radius:25px}.product:nth-child(2) .shape:after{content:')))';inset:0;color:var(--brick)}.product:nth-child(3) .visual{color:var(--gold-deep)}.product:nth-child(3) .shape{width:90px;height:40px;border-radius:12px}.product:nth-child(3) .shape:after{content:'';inset:13px 17px auto;height:4px;background:currentColor}.product:nth-child(4) .visual{color:var(--plum)}.product:nth-child(4) .shape{width:58px;height:68px;border-radius:16px}.product:nth-child(4) .shape:after{content:'⌁';inset:17px 0 0}.kicker{color:var(--gold-deep);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.product h3{margin-top:5px;font-size:1.1rem}
+    .services-grid{display:grid;grid-template-columns:1.05fr 1.95fr;gap:65px}.services-intro p{max-width:42ch;margin-top:23px;color:var(--soft)}.service-list{border-top:1px solid var(--line)}.service{display:grid;grid-template-columns:65px 1fr auto;align-items:center;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}.num{color:var(--gold-deep);font:1.35rem Fraunces}.service p{margin-top:5px;color:var(--soft);font-size:.89rem}.arrow{color:var(--brick);font-size:1.35rem}
+    .promise{background:var(--plum);color:var(--paper)}.promise .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:85px;align-items:center}.promise h2{color:var(--paper)}.promise-copy>p{max-width:45ch;margin-top:23px;color:oklch(85% .025 72)}.promise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.promise-item{min-height:145px;padding:22px;border:1px solid oklch(99% .008 72 / .18);border-radius:16px;background:oklch(99% .008 72 / .06)}.promise-item b{display:block;margin-bottom:9px;color:var(--gold);font:1.5rem Fraunces}.promise-item span{color:oklch(85% .025 72);font-size:.86rem}
+    .visit{padding-bottom:120px}.visit-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.visit-panel{min-height:320px;padding:38px;border-radius:20px;background:var(--gold)}.visit-panel.dark{background:var(--ink);color:var(--paper)}.visit-panel h2{max-width:540px;font-size:clamp(2.5rem,4.5vw,4.5rem)}.address{max-width:36ch;margin-top:23px}.visit-panel .btn{margin-top:28px;background:var(--paper);color:var(--ink)}.visit-panel .btn:hover{background:var(--ink);color:var(--paper)}.visit-panel h3{color:var(--gold);font:1.5rem Fraunces,serif}.hours{display:grid;gap:12px;margin-top:24px}.hours-row{display:flex;justify-content:space-between;gap:16px;padding-bottom:10px;border-bottom:1px solid oklch(99% .008 72 / .16);color:oklch(84% .025 72);font-size:.88rem}.open{color:var(--mint);font-weight:700}footer{padding:24px 0 34px;border-top:1px solid var(--line);color:var(--soft);font-size:.79rem}footer .wrap{display:flex;justify-content:space-between;gap:20px}.wa{position:fixed;right:22px;bottom:22px;z-index:11;min-height:53px;padding:0 19px;display:inline-flex;align-items:center;gap:9px;border-radius:999px;background:oklch(62% .16 150);color:var(--paper);font-weight:700;box-shadow:0 12px 25px oklch(20% .025 325 / .2);transition:transform .2s}.wa:hover{transform:translateY(-3px)}.reveal{opacity:0;transform:translateY(15px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.reveal.show{opacity:1;transform:none}:focus-visible{outline:3px solid var(--brick);outline-offset:4px}
+    @media(max-width:900px){.hero-grid,.services-grid,.promise .wrap{grid-template-columns:1fr;gap:45px}.products{grid-template-columns:repeat(2,1fr)}.showcase{min-height:410px}.promise-grid{max-width:650px}.visit-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.wrap{width:calc(100% - 32px)}.announce .wrap{justify-content:center;text-align:center}.announce span:last-child{display:none}.navin{min-height:66px}.hamb{display:block}.links{display:none;position:absolute;top:65px;left:16px;right:16px;padding:14px;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:15px;box-shadow:0 10px 28px oklch(20% .025 325 / .1)}.links.open{display:flex}.links a,.links .cta{padding:12px 8px}.hero{padding:62px 0 80px}h1{font-size:clamp(3.1rem,16vw,4.8rem)}.hero p{font-size:1rem}.showcase{min-height:380px}.phone{width:200px;height:380px}.note{right:-1px;bottom:22px;width:158px}.head{display:block}.head p{margin-top:18px}.products{gap:10px}.product{min-height:220px;padding:13px}.visual{height:100px}.services-grid{gap:30px}.service{grid-template-columns:37px 1fr 18px;gap:10px}.promise .wrap{gap:31px}.promise-grid{gap:8px}.promise-item{min-height:157px;padding:16px}.visit-panel{min-height:280px;padding:27px}footer .wrap{display:block}footer small{display:block;margin-top:7px}.wa{right:16px;bottom:16px}}
+  </style>
+</head>
+<body>
+  <div class="announce"><div class="wrap"><span><strong>Open every day</strong>, 9:00 AM to 9:00 PM</span><span>Milak, District Rampur, Uttar Pradesh</span></div></div>
+  <nav><div class="wrap navin"><a class="brand" href="#home"><span class="mark">S</span><span>Shyam Communication<small>mobile, made simple</small></span></a><button class="hamb" aria-label="Open menu" aria-expanded="false">☰</button><div class="links"><a href="#shop">Shop</a><a href="#services">Services</a><a href="#visit">Visit us</a><a class="cta" href="https://wa.me/918650138684" target="_blank" rel="noopener">WhatsApp us ↗</a></div></div></nav>
+  <main id="home">
+    <section class="hero"><div class="wrap hero-grid"><div class="reveal"><div class="eyebrow">Your neighbourhood phone store</div><h1>Your next phone,<br><em>sorted.</em></h1><p>New smartphones, useful accessories, and honest help for every budget. Find what fits you in the heart of Milak.</p><div class="actions"><a class="btn" href="https://wa.me/918650138684" target="_blank" rel="noopener">Ask on WhatsApp ↗</a><a class="btn ghost" href="#shop">See what’s in store</a></div><div class="proof"><span><i class="dot"></i> 100% original products</span><span><i class="dot"></i> Best price promise</span></div></div><div class="showcase reveal"><div class="phone"><div class="screen"><h3>Shyam<br>Communication</h3><div class="screen-line"></div><div class="screen-phone"></div><div class="screen-tag">SMART CHOICES, LOCAL TRUST</div></div></div><div class="note"><b>A little extra, always.</b>Free special gift with every product purchase. Ask us what’s in store.</div></div></div></section>
+    <section id="shop" class="catalog"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">What’s in store</div><h2>Useful tech.<br>No guesswork.</h2></div><p>From a flagship upgrade to a cable you can trust, we keep the useful stuff close and the advice clear.</p></div><div class="filters reveal" role="group" aria-label="Filter products"><button class="filter" aria-pressed="true" data-filter="all">Everything</button><button class="filter" aria-pressed="false" data-filter="phones">Phones</button><button class="filter" aria-pressed="false" data-filter="audio">Audio</button><button class="filter" aria-pressed="false" data-filter="power">Power</button><button class="filter" aria-pressed="false" data-filter="wearables">Wearables</button></div><div class="products reveal"><article class="product" data-category="phones"><div class="visual"><div class="shape"></div></div><div><div class="kicker">All brands</div><h3>New smartphones</h3></div></article><article class="product" data-category="audio"><div class="visual"><div class="shape"></div></div><div><div class="kicker">Sound on</div><h3>Earphones & audio</h3></div></article><article class="product" data-category="power"><div class="visual"><div class="shape"></div></div><div><div class="kicker">Stay powered</div><h3>Chargers & cables</h3></div></article><article class="product" data-category="wearables"><div class="visual"><div class="shape"></div></div><div><div class="kicker">On your time</div><h3>Smart watches</h3></div></article></div><p id="empty" class="muted" style="display:none;margin-top:20px">That shelf is empty for now. Message us and we’ll help you find it.</p></div></section>
+    <section id="services"><div class="wrap services-grid"><div class="services-intro reveal"><div class="eyebrow">More than a counter</div><h2>Small fixes.<br>Big relief.</h2><p>Need a recharge, a repair, or the right cover for a new phone? Bring it in. We’ll sort the practical stuff without the runaround.</p></div><div class="service-list reveal"><div class="service"><div class="num">01</div><div><h3>Mobile repair</h3><p>Friendly, careful help for the phones you rely on.</p></div><div class="arrow">↗</div></div><div class="service"><div class="num">02</div><div><h3>Mobile recharge</h3><p>Quick recharges, handled at the shop.</p></div><div class="arrow">↗</div></div><div class="service"><div class="num">03</div><div><h3>Accessory sale</h3><p>Covers, cables, audio, chargers, and more.</p></div><div class="arrow">↗</div></div></div></div></section>
+    <section class="promise"><div class="wrap"><div class="promise-copy reveal"><div class="eyebrow" style="color:var(--gold)">The Shyam standard</div><h2>Buy with<br>confidence.</h2><p>We’re building the kind of local shop people come back to, because the price is fair, the products are original, and the welcome is always real.</p></div><div class="promise-grid reveal"><div class="promise-item"><b>01</b><span>Best price guarantee, without the sales pressure.</span></div><div class="promise-item"><b>02</b><span>100% original products, sourced with care.</span></div><div class="promise-item"><b>03</b><span>Trusted, customer-friendly service.</span></div><div class="promise-item"><b>04</b><span>A free special gift with every product purchase.</span></div></div></div></section>
+    <section id="visit" class="visit"><div class="wrap"><div class="head reveal"><div><div class="eyebrow">Come say hello</div><h2>Find us in Milak.</h2></div><p>Pop in for a look, a repair, a recharge, or just a second opinion before you buy.</p></div><div class="visit-grid"><div class="visit-panel reveal"><h2>Right behind the Gurudwara, in the Market.</h2><p class="address">Distt. Rampur, Tehsil Milak, Gurudwara ke Picha (behind Gurudwara), Market, Milak, Uttar Pradesh, India</p><a class="btn" href="https://wa.me/918650138684" target="_blank" rel="noopener">Get directions on WhatsApp ↗</a></div><div class="visit-panel dark reveal"><h3>Hours</h3><div class="hours"><div class="hours-row"><span>Monday to Sunday</span><span>9:00 AM to 9:00 PM</span></div><div class="hours-row"><span>Today</span><span id="status" class="open">Open now</span></div></div><h3 style="margin-top:44px">Call or WhatsApp</h3><p style="margin-top:10px;font-size:1.15rem">+91 86501 38684</p></div></div></div></section>
+  </main>
+  <a class="wa" href="https://wa.me/918650138684" target="_blank" rel="noopener" aria-label="Chat with Shyam Communication on WhatsApp">◉ <span>WhatsApp us</span></a>
+  <footer><div class="wrap"><span>© 2026 Shyam Communication</span><small>Milak, Rampur · phones, accessories, and helpful service</small></div></footer>
+  <script>
+    const menu=document.querySelector('.hamb'),links=document.querySelector('.links');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open)});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+    const filters=document.querySelectorAll('.filter'),products=document.querySelectorAll('.product'),empty=document.querySelector('#empty');filters.forEach(f=>f.addEventListener('click',()=>{const cat=f.dataset.filter;filters.forEach(x=>x.setAttribute('aria-pressed',x===f));let shown=0;products.forEach(p=>{const show=cat==='all'||p.dataset.category===cat;p.style.display=show?'':'none';if(show)shown++});empty.style.display=shown?'none':'block'}));
+    const hour=new Date().getHours(),status=document.querySelector('#status');status.textContent=hour>=9&&hour<21?'Open now':'Closed now';status.style.color=hour>=9&&hour<21?'var(--mint)':'var(--gold)';
+    const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
