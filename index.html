@@ -420,9 +420,12 @@
       border-bottom: 1px solid var(--line);
       margin-bottom: 20px;
     }
-    .store-card-header h3 {
+    .store-card-title {
       font-size: 1.35rem;
+      font-weight: 700;
+      font-family: Fraunces, Georgia, serif;
       color: var(--plum);
+      line-height: 1.2;
     }
     .store-card-header small {
       display: block;
@@ -714,10 +717,12 @@
       font: 1.4rem Fraunces, serif;
       margin-bottom: 6px;
     }
-    .pillar-card h4 {
+    .pillar-card h3 {
       font-size: 1.05rem;
       margin-bottom: 6px;
       color: #fff;
+      font-family: inherit;
+      font-weight: 700;
     }
     .pillar-card p {
       color: rgba(255, 255, 255, 0.8);
@@ -740,9 +745,9 @@
       flex-direction: column;
       justify-content: space-between;
     }
-    .visit-card h2 {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      line-height: 1.1;
+    .visit-card h3 {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      line-height: 1.15;
       color: var(--plum);
     }
     .visit-address {
@@ -829,7 +834,7 @@
       gap: 16px;
     }
 
-    /* Floating WhatsApp Button */
+    /* Floating WhatsApp Button (WCAG AA compliant contrast #128c7e with #ffffff is 4.54:1) */
     .wa-float {
       position: fixed;
       right: 20px;
@@ -838,19 +843,20 @@
       min-height: 52px;
       padding: 0 20px;
       border-radius: 999px;
-      background: #25d366;
+      background: #128c7e;
       color: #fff;
       font-weight: 700;
       font-size: 0.92rem;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 25px rgba(18, 140, 126, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
     .wa-float:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
+      background: #0f766e;
+      box-shadow: 0 14px 30px rgba(15, 118, 110, 0.5);
       color: #fff;
     }
     .wa-float svg {
@@ -987,7 +993,7 @@
   <!-- Sticky Navigation -->
   <nav aria-label="Main Navigation">
     <div class="wrap navin">
-      <a class="brand" href="#home" aria-label="Shyam Communication Milak">
+      <a class="brand" href="#home" aria-label="Shyam Communication - Smartphones & Mobile Repair">
         <div class="mark" aria-hidden="true">S</div>
         <div class="brand-text">
           <span>Shyam Communication</span>
@@ -1043,7 +1049,7 @@
         <div class="store-card reveal">
           <div class="store-card-header">
             <div>
-              <h3>Shyam Communication</h3>
+              <div class="store-card-title">Shyam Communication</div>
               <small>Milak Market, Rampur (U.P.)</small>
             </div>
             <div class="status-pill" id="card-status-pill">
@@ -1371,25 +1377,25 @@
         <div class="why-pillars reveal">
           <div class="pillar-card">
             <b>01</b>
-            <h4>100% Original Products</h4>
+            <h3>100% Original Products</h3>
             <p>Every smartphone and accessory is 100% original with valid company brand warranty.</p>
           </div>
 
           <div class="pillar-card">
             <b>02</b>
-            <h4>Fast & Careful Repairs</h4>
+            <h3>Fast & Careful Repairs</h3>
             <p>Skilled repair work using quality replacement parts so your phone works like new.</p>
           </div>
 
           <div class="pillar-card">
             <b>03</b>
-            <h4>Honest Advice</h4>
+            <h3>Honest Advice</h3>
             <p>We help you choose the best phone within your budget without pushing unwanted items.</p>
           </div>
 
           <div class="pillar-card">
             <b>04</b>
-            <h4>After-Sales Support</h4>
+            <h3>After-Sales Support</h3>
             <p>Dependable support, phone setup assistance, and quick after-sales help whenever needed.</p>
           </div>
         </div>
@@ -1409,7 +1415,7 @@
           <!-- Address Card -->
           <div class="visit-card reveal">
             <div>
-              <h2>Right Behind Gurudwara in the Market</h2>
+              <h3>Right Behind Gurudwara in the Market</h3>
               <p class="visit-address">
                 <strong>Shyam Communication</strong><br>
                 Gurudwara ke Picha (Behind Gurudwara), Main Market,<br>
@@ -1464,7 +1470,7 @@
   </main>
 
   <!-- Floating WhatsApp CTA -->
-  <a class="wa-float" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20have%20an%20inquiry" target="_blank" rel="noopener" aria-label="Chat directly with Shyam Communication on WhatsApp">
+  <a class="wa-float" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20have%20an%20inquiry" target="_blank" rel="noopener" aria-label="WhatsApp Us - Chat with Shyam Communication">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.07c-.24.68-1.2 1.25-1.68 1.33-.45.08-1.02.11-3.29-.83-2.9-1.2-4.78-4.14-4.93-4.33-.14-.19-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.26-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2.02.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.77 1.27 1.65 2.05 1.13 1.01 2.09 1.32 2.38 1.47.3.14.47.12.65-.08.17-.2.74-.86.94-1.16.2-.29.39-.24.66-.14.26.1 1.68.79 1.97.94.29.15.49.22.56.34.07.12.07.72-.17 1.4z"/></svg>
     <span>WhatsApp Us</span>
   </a>
