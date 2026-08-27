@@ -3,21 +3,26 @@
 <head>
 <!-- skill:chrome -->
 <style>
-/* Credit line — subtle bottom-left */
+/* Credit line — bottom-left (fixed to avoid overlapping floating buttons) */
 .design-ui-credit {
   position: fixed;
-  bottom: 8px;
-  left: 12px;
+  bottom: 12px;
+  left: 14px;
   font: 11px/1 system-ui, sans-serif;
-  color: rgba(128,128,128,0.5);
+  color: rgba(128, 128, 128, 0.55);
   pointer-events: none;
   z-index: 2147483647;
   transition: opacity 0.4s ease;
   user-select: none;
+  letter-spacing: 0.02em;
 }
+
+/* Hide chrome on touch devices */
 @media (hover: none) {
   .design-ui-credit { display: none; }
 }
+
+/* Print fixes */
 @media print {
   * { transition: none !important; animation: none !important; box-shadow: none !important; }
   body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
