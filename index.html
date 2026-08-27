@@ -3,36 +3,24 @@
 <head>
 <!-- skill:chrome -->
 <style>
-/* Credit line — bottom-left to prevent collision with floating actions */
+/* Credit line — subtle bottom-left */
 .design-ui-credit {
   position: fixed;
   bottom: 8px;
   left: 12px;
   font: 11px/1 system-ui, sans-serif;
-  color: rgba(128,128,128,0.55);
+  color: rgba(128,128,128,0.5);
   pointer-events: none;
   z-index: 2147483647;
   transition: opacity 0.4s ease;
   user-select: none;
-  letter-spacing: 0.02em;
 }
-
-/* Hide chrome on touch devices */
 @media (hover: none) {
   .design-ui-credit { display: none; }
 }
-
-/* Print fixes */
 @media print {
-  * {
-    transition: none !important;
-    animation: none !important;
-    box-shadow: none !important;
-  }
-  body {
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
+  * { transition: none !important; animation: none !important; box-shadow: none !important; }
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   .design-ui-credit { display: none !important; }
 }
 </style>
@@ -41,16 +29,13 @@
     function markEditable() {
         document.body.classList.add('artifact-editable');
     }
-
     function initChromeUI() {
         if (!matchMedia('(hover: hover)').matches) return;
-
         var credit = document.createElement('div');
         credit.className = 'design-ui-credit';
         credit.setAttribute('aria-hidden', 'true');
         credit.innerHTML = '\u{1F49C} by Xeyronox';
         document.body.appendChild(credit);
-
         var timer = null;
         var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
         fade(true);
@@ -62,12 +47,10 @@
         document.addEventListener('mousemove', show);
         show();
     }
-
     function init() {
         markEditable();
         initChromeUI();
     }
-
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
@@ -78,29 +61,29 @@
 <!-- /skill:chrome -->
 
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   
   <!-- Primary Meta Tags -->
-  <title>Shyam Communication | Mobile Store, Repair & Accessories in Milak, Rampur</title>
-  <meta name="description" content="Shyam Communication: smartphones, original accessories, expert mobile repair, and recharge in Milak, Rampur. 100% original products with local trust." />
-  <meta name="keywords" content="Shyam Communication, Mobile shop Milak, Phone repair Milak Rampur, Smartphones Milak, Mobile accessories, Mobile recharge Milak" />
-  <meta name="theme-color" content="#4a154b" />
+  <title>Shyam Communication | Mobile Shop & Phone Repair in Milak, Rampur</title>
+  <meta name="description" content="Shyam Communication in Milak, Rampur. All brand smartphones, 100% genuine accessories, fast display & battery repair, and mobile recharge behind Gurudwara." />
+  <meta name="keywords" content="Shyam Communication Milak, Mobile Shop Milak, Phone Repair Milak, Smartphone Store Rampur, Mobile Accessories Milak" />
+  <meta name="theme-color" content="#371536" />
   
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23d99726%22/><text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-size=%2256%22 font-weight=%22bold%22 fill=%22%2347183e%22>S</text></svg>" type="image/svg+xml" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23d99726%22/><text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-size=%2256%22 font-weight=%22bold%22 fill=%22%23371536%22>S</text></svg>" type="image/svg+xml" />
 
-  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <!-- Open Graph / WhatsApp Preview -->
   <meta property="og:type" content="business.business" />
   <meta property="og:site_name" content="Shyam Communication" />
-  <meta property="og:title" content="Shyam Communication | Mobile Store & Repair in Milak, Rampur" />
-  <meta property="og:description" content="Smartphones, accessories, mobile repair, and instant recharge in Milak, Rampur. 100% original products and trusted local service." />
+  <meta property="og:title" content="Shyam Communication | Mobile Shop & Phone Repair in Milak" />
+  <meta property="og:description" content="All brand smartphones, original accessories, fast phone repairs, and mobile recharge in Milak, Rampur (Behind Gurudwara)." />
   <meta property="og:url" content="https://shyamcommunication.vercel.app/" />
   <meta property="og:image" content="https://shyamcommunication.vercel.app/og-image.jpg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Shyam Communication | Mobile Store & Repair in Milak" />
-  <meta name="twitter:description" content="Smartphones, audio, power, accessories & fast mobile repairs in Milak, Rampur." />
+  <meta name="twitter:title" content="Shyam Communication | Mobile Shop & Phone Repair in Milak" />
+  <meta name="twitter:description" content="All brand smartphones, original accessories, fast phone repairs, and mobile recharge in Milak, Rampur." />
   <meta name="twitter:image" content="https://shyamcommunication.vercel.app/og-image.jpg" />
 
   <!-- Local Business Schema (JSON-LD) for Local SEO -->
@@ -109,12 +92,12 @@
     "@context": "https://schema.org",
     "@type": "MobilePhoneStore",
     "name": "Shyam Communication",
-    "description": "Smartphones, original mobile accessories, expert mobile repairs, and recharges in Milak, Rampur.",
+    "description": "Smartphones, original accessories, mobile repairs, and recharges in Milak, Rampur.",
     "image": "https://shyamcommunication.vercel.app/og-image.jpg",
     "telephone": "+918650138684",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Behind Gurudwara, Market",
+      "streetAddress": "Behind Gurudwara, Main Market",
       "addressLocality": "Milak",
       "addressRegion": "Uttar Pradesh",
       "postalCode": "243701",
@@ -127,15 +110,7 @@
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens": "09:00",
       "closes": "21:00"
     }
@@ -149,181 +124,211 @@
 
   <style>
     :root {
-      --ink: oklch(20% .025 325);
-      --soft: oklch(34% .028 325);
-      --paper: oklch(97% .012 72);
-      --warm: oklch(93% .035 70);
-      --line: oklch(83% .025 72);
-      --gold: oklch(74% .16 65);
-      --gold-deep: oklch(50% .16 50);
-      --brick: oklch(52% .16 29);
-      --plum: oklch(34% .11 325);
-      --mint: oklch(80% .12 155);
-      --mint-deep: oklch(45% .14 155);
+      --ink: #1e1b22;
+      --soft: #55505e;
+      --paper: #faf8f5;
+      --warm: #f2ede4;
+      --line: #ded7cb;
+      --gold: #d99726;
+      --gold-deep: #a86c0d;
+      --brick: #9c3628;
+      --plum: #3a1639;
+      --mint: #108e56;
+      --mint-light: #e6f6ee;
       --ease: cubic-bezier(.16, 1, .3, 1);
-      --shadow: 0 22px 60px oklch(20% .025 325 / .13);
+      --shadow-sm: 0 4px 14px rgba(30, 27, 34, 0.06);
+      --shadow-md: 0 12px 30px rgba(30, 27, 34, 0.08);
+      --shadow-lg: 0 20px 48px rgba(30, 27, 34, 0.12);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font: 16px/1.55 'DM Sans', system-ui, sans-serif;
+      font: 16px/1.6 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       overflow-x: hidden;
+      width: 100%;
     }
     a { text-decoration: none; color: inherit; }
     button { font: inherit; }
-    h1, h2, h3, h4, p { margin: 0; }
-    h1, h2, h3 { text-wrap: balance; }
-    h1, h2 {
-      font-family: Fraunces, Georgia, serif;
-      line-height: .97;
-      letter-spacing: -.045em;
-    }
-    h1 { font-size: clamp(3.2rem, 7.5vw, 6.5rem); }
-    h2 { font-size: clamp(2.3rem, 4.8vw, 4.4rem); }
-    h3 { line-height: 1.2; }
-    
+    h1, h2, h3, h4 { text-wrap: balance; font-family: Fraunces, Georgia, serif; line-height: 1.12; letter-spacing: -0.03em; }
+    h1 { font-size: clamp(2.4rem, 5.5vw, 4.8rem); }
+    h2 { font-size: clamp(1.9rem, 3.8vw, 3.2rem); }
+    h3 { font-size: 1.22rem; }
+
     .wrap {
-      width: min(1180px, calc(100% - 48px));
-      margin: auto;
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
     }
-    .muted { color: var(--soft); }
     .eyebrow {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       color: var(--gold-deep);
-      font-size: .75rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: .15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      margin-bottom: 12px;
     }
-    .eyebrow:before {
+    .eyebrow::before {
       content: '';
-      width: 27px;
+      width: 20px;
       height: 2px;
       background: var(--gold);
-      flex-shrink: 0;
+      display: inline-block;
     }
 
-    /* Announcement Bar */
+    /* Announcement Banner */
     .announce {
       background: var(--plum);
-      color: var(--paper);
-      padding: 9px 0;
-      font-size: .82rem;
+      color: #fff;
+      padding: 10px 0;
+      font-size: 0.84rem;
     }
     .announce .wrap {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
     }
     .announce strong { color: var(--gold); }
-    .live-status-pill {
+    .live-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: oklch(99% .008 72 / .15);
-      padding: 2px 9px;
+      background: rgba(255, 255, 255, 0.14);
+      padding: 3px 10px;
       border-radius: 999px;
       font-weight: 600;
-      font-size: .78rem;
+      font-size: 0.78rem;
     }
-    .live-status-dot {
-      width: 7px;
-      height: 7px;
+    .live-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: var(--mint);
+      background: #4ade80;
+      box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
     }
-    .live-status-dot.closed {
-      background: var(--gold);
+    .live-dot.closed {
+      background: #facc15;
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25);
     }
 
     /* Navigation */
     nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: oklch(97% .012 72 / .95);
+      z-index: 1000;
+      background: rgba(250, 248, 245, 0.96);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(13px);
-      -webkit-backdrop-filter: blur(13px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .navin {
-      min-height: 76px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 20px;
     }
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 700;
-      letter-spacing: -.03em;
+      letter-spacing: -0.02em;
     }
     .mark {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       display: grid;
       place-items: center;
-      border-radius: 12px 12px 12px 3px;
+      border-radius: 12px 12px 12px 4px;
       background: var(--gold);
       color: var(--plum);
-      font: 1.45rem Fraunces;
-      box-shadow: 0 4px 12px oklch(74% .16 65 / .3);
+      font: 1.5rem Fraunces, serif;
+      box-shadow: 0 4px 10px rgba(217, 151, 38, 0.3);
+      flex-shrink: 0;
     }
-    .brand small {
+    .brand-text span {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .brand-text small {
       display: block;
       color: var(--soft);
-      font-size: .65rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+      font-size: 0.72rem;
       font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
     .links {
       display: flex;
       align-items: center;
       gap: 24px;
-      color: var(--soft);
-      font-size: .92rem;
+      font-size: 0.94rem;
       font-weight: 600;
+      color: var(--soft);
     }
     .links a {
-      transition: color .2s ease;
-      padding: 6px 4px;
+      padding: 6px 2px;
+      transition: color 0.2s ease;
     }
-    .links a:hover {
-      color: var(--brick);
-    }
-    .cta, .btn {
-      min-height: 48px;
-      padding: 0 22px;
-      border: 0;
-      border-radius: 999px;
+    .links a:hover { color: var(--brick); }
+    .cta-nav {
       background: var(--ink);
-      color: var(--paper);
+      color: #fff !important;
+      padding: 10px 20px !important;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease, background 0.2s ease !important;
+    }
+    .cta-nav:hover {
+      background: var(--brick) !important;
+      transform: translateY(-2px);
+    }
+    .hamb {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 1.3rem;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn {
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 0;
+      background: var(--ink);
+      color: #fff;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 8px;
       font-weight: 700;
-      font-size: .92rem;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: transform .25s var(--ease), background .2s, box-shadow .2s;
+      transition: transform 0.2s var(--ease), background 0.2s ease, box-shadow 0.2s ease;
       white-space: nowrap;
+      text-align: center;
     }
-    .cta:hover, .btn:hover {
+    .btn:hover {
       transform: translateY(-2px);
       background: var(--brick);
-      box-shadow: 0 10px 22px oklch(20% .025 325 / .15);
-      color: var(--paper);
+      box-shadow: 0 8px 20px rgba(156, 54, 40, 0.25);
+      color: #fff;
     }
     .btn.ghost {
       background: transparent;
@@ -332,7 +337,8 @@
     }
     .btn.ghost:hover {
       background: var(--ink);
-      color: var(--paper);
+      color: #fff;
+      box-shadow: none;
     }
     .btn.gold {
       background: var(--gold);
@@ -340,626 +346,519 @@
     }
     .btn.gold:hover {
       background: var(--gold-deep);
-      color: var(--paper);
-    }
-    .hamb {
-      display: none;
-      background: none;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 6px 10px;
-      font-size: 1.4rem;
-      color: var(--ink);
-      cursor: pointer;
+      color: #fff;
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
-      overflow: hidden;
       position: relative;
-      padding: 90px 0 105px;
-    }
-    .hero:before {
-      content: '';
-      position: absolute;
-      width: 650px;
-      height: 650px;
-      right: -240px;
-      top: -80px;
-      border-radius: 50%;
-      background: var(--gold);
-      opacity: .55;
-      pointer-events: none;
-    }
-    .hero:after {
-      content: '';
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      right: 210px;
-      bottom: 15px;
-      border-radius: 50%;
-      background: var(--mint);
-      opacity: .75;
-      pointer-events: none;
+      padding: 70px 0 85px;
+      background: radial-gradient(circle at 90% 10%, rgba(217, 151, 38, 0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 10% 90%, rgba(156, 54, 40, 0.08) 0%, transparent 40%);
     }
     .hero-grid {
-      position: relative;
-      z-index: 1;
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
-      gap: 60px;
+      gap: 50px;
     }
     .hero p {
-      max-width: 52ch;
-      margin-top: 24px;
       color: var(--soft);
-      font-size: 1.15rem;
-      line-height: 1.6;
+      font-size: 1.12rem;
+      line-height: 1.65;
+      margin: 18px 0 28px;
+      max-width: 52ch;
     }
-    .actions {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 32px;
     }
-    .proof {
+    .hero-proof {
       display: flex;
       flex-wrap: wrap;
-      gap: 22px;
+      gap: 20px;
       margin-top: 32px;
       padding-top: 24px;
       border-top: 1px solid var(--line);
       color: var(--soft);
-      font-size: .88rem;
-      font-weight: 500;
+      font-size: 0.88rem;
+      font-weight: 600;
     }
-    .proof span {
-      display: flex;
+    .hero-proof span {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
     }
-    .dot {
+    .proof-dot {
       width: 8px;
       height: 8px;
-      background: var(--mint-deep);
       border-radius: 50%;
-      box-shadow: 0 0 0 4px oklch(80% .12 155 / .3);
+      background: var(--mint);
     }
 
-    /* Showcase visual */
-    .showcase {
-      position: relative;
-      min-height: 480px;
-      display: grid;
-      place-items: center;
-    }
-    .phone {
-      width: 240px;
-      height: 460px;
-      position: relative;
-      z-index: 2;
-      border: 8px solid var(--ink);
-      border-radius: 38px;
-      background: var(--plum);
-      box-shadow: 20px 26px 0 var(--gold), var(--shadow);
-      transform: rotate(6deg);
-      overflow: hidden;
-    }
-    .phone:before {
-      content: '';
-      position: absolute;
-      top: 9px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 82px;
-      height: 21px;
-      border-radius: 0 0 17px 17px;
-      background: var(--ink);
-      z-index: 3;
-    }
-    .screen {
-      height: 100%;
-      padding: 66px 21px 21px;
-      color: var(--paper);
-      background:
-        radial-gradient(circle at 80% 14%, var(--gold) 0 14%, transparent 15%),
-        radial-gradient(circle at 17% 78%, var(--brick) 0 22%, transparent 23%),
-        var(--plum);
-    }
-    .screen h3 {
-      font: 1.72rem/1 Fraunces, serif;
-    }
-    .screen-line {
-      width: 78px;
-      height: 5px;
-      margin-top: 12px;
-      border-radius: 5px;
-      background: var(--gold);
-    }
-    .screen-phone {
-      position: absolute;
-      top: 168px;
-      left: 50px;
-      width: 122px;
-      height: 180px;
-      border: 5px solid var(--paper);
-      border-radius: 18px;
-      transform: rotate(-12deg);
-    }
-    .screen-phone:before {
-      content: '';
-      position: absolute;
-      top: 12px;
-      left: 26px;
-      width: 62px;
-      height: 4px;
-      border-radius: 5px;
-      background: var(--paper);
-    }
-    .screen-phone:after {
-      content: 'SC';
-      position: absolute;
-      inset: 47px 0 0;
-      display: grid;
-      place-items: center;
-      color: var(--gold);
-      font: 2.8rem Fraunces;
-    }
-    .screen-tag {
-      position: absolute;
-      bottom: 25px;
-      left: 20px;
-      right: 20px;
-      padding: 10px;
-      border-radius: 12px;
-      background: var(--paper);
-      color: var(--plum);
-      font-size: .68rem;
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: .05em;
-    }
-    .note {
-      position: absolute;
-      right: -10px;
-      bottom: 35px;
-      z-index: 3;
-      width: 195px;
-      padding: 18px;
-      border-radius: 4px 18px 18px 18px;
-      background: var(--paper);
-      box-shadow: 0 12px 28px oklch(20% .025 325 / .15);
-      font-size: .83rem;
-      transform: rotate(-4deg);
+    /* Hero Highlights Card (Clean, Modern, Fully Responsive) */
+    .store-card {
+      background: #fff;
       border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
     }
-    .note b {
+    .store-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 20px;
+    }
+    .store-card-header h3 {
+      font-size: 1.35rem;
+      color: var(--plum);
+    }
+    .store-card-header small {
       display: block;
-      margin-bottom: 4px;
-      font: 1.15rem Fraunces, serif;
+      color: var(--soft);
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .status-pill {
+      background: var(--mint-light);
+      color: var(--mint);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .store-features {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .store-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.94rem;
+    }
+    .feature-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--warm);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .store-feature-item b {
+      display: block;
       color: var(--ink);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+    .store-feature-item span {
+      color: var(--soft);
+      font-size: 0.84rem;
+      line-height: 1.4;
+    }
+    .gift-offer-box {
+      background: linear-gradient(135deg, rgba(217, 151, 38, 0.15), rgba(156, 54, 40, 0.1));
+      border: 1px dashed var(--gold);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .gift-offer-box span {
+      font-size: 1.5rem;
+    }
+    .gift-offer-box p {
+      font-size: 0.85rem;
+      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 0;
     }
 
     /* Sections */
-    section { padding: 100px 0; }
-    .head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 25px;
-      margin-bottom: 36px;
+    section { padding: 90px 0; }
+    .section-head {
+      margin-bottom: 40px;
+      max-width: 680px;
     }
-    .head h2 { max-width: 580px; }
-    .head p {
-      max-width: 38ch;
+    .section-head p {
       color: var(--soft);
-      font-size: 1.05rem;
+      font-size: 1.08rem;
+      margin-top: 12px;
+      line-height: 1.6;
     }
 
-    /* Catalog / Shop */
-    .catalog { background: var(--warm); }
-    .filters {
+    /* Catalog / Products */
+    .catalog-section { background: var(--warm); }
+    .filter-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 28px;
+      gap: 10px;
+      margin-bottom: 30px;
     }
-    .filter {
-      padding: 10px 18px;
-      border: 1px solid var(--line);
+    .filter-btn {
+      padding: 10px 20px;
       border-radius: 999px;
-      background: var(--paper);
+      border: 1px solid var(--line);
+      background: #fff;
       color: var(--soft);
-      cursor: pointer;
-      font-size: .88rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      transition: all .2s ease;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .filter[aria-pressed=true], .filter:hover {
+    .filter-btn[aria-pressed="true"], .filter-btn:hover {
       background: var(--ink);
       border-color: var(--ink);
-      color: var(--paper);
+      color: #fff;
     }
-    .products {
+    .product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
-    .product {
-      min-height: 275px;
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      transition: transform .3s var(--ease), box-shadow .3s, border-color .2s;
-      position: relative;
+      min-height: 270px;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s ease, border-color 0.2s ease;
     }
-    .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 30px oklch(20% .025 325 / .1);
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
       border-color: var(--gold);
     }
-    .visual {
-      height: 120px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
+    .product-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       background: var(--warm);
       color: var(--plum);
-      position: relative;
-      overflow: hidden;
-    }
-    .shape {
-      position: relative;
-      width: 54px;
-      height: 84px;
-      border: 3.5px solid currentColor;
-      border-radius: 12px;
-    }
-    .shape:before {
-      content: '';
-      position: absolute;
-      top: 6px;
-      left: 50%;
-      width: 18px;
-      height: 3.5px;
-      transform: translateX(-50%);
-      border-radius: 3px;
-      background: currentColor;
-    }
-    .shape:after {
-      content: '✦';
-      position: absolute;
-      inset: 22px 0 0;
       display: grid;
       place-items: center;
-      color: var(--gold-deep);
-      font-size: 1.2rem;
+      margin-bottom: 16px;
     }
+    .product-card[data-category="phones"] .product-icon-wrap { background: #fdf2e9; color: #c05621; }
+    .product-card[data-category="audio"] .product-icon-wrap { background: #ebf8ff; color: #2b6cb0; }
+    .product-card[data-category="power"] .product-icon-wrap { background: #fefcbf; color: #975a16; }
+    .product-card[data-category="wearables"] .product-icon-wrap { background: #faf5ff; color: #6b46c1; }
     
-    /* Visual shapes per category styling */
-    .product[data-category="audio"] .visual { color: var(--brick); }
-    .product[data-category="audio"] .shape {
-      width: 78px;
-      height: 48px;
-      border-radius: 24px;
-    }
-    .product[data-category="audio"] .shape:after {
-      content: '♫';
-      inset: 0;
-      color: var(--brick);
-      font-size: 1.2rem;
-    }
-
-    .product[data-category="power"] .visual { color: var(--gold-deep); }
-    .product[data-category="power"] .shape {
-      width: 60px;
-      height: 60px;
-      border-radius: 14px;
-    }
-    .product[data-category="power"] .shape:after {
-      content: '⚡';
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 1.3rem;
-    }
-
-    .product[data-category="wearables"] .visual { color: var(--plum); }
-    .product[data-category="wearables"] .shape {
-      width: 52px;
-      height: 64px;
-      border-radius: 16px;
-    }
-    .product[data-category="wearables"] .shape:after {
-      content: '⌚';
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 1.25rem;
-    }
-
-    .kicker {
-      color: var(--gold-deep);
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .product h3 {
-      margin-top: 5px;
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-    .product-info {
-      margin-top: 10px;
+    .product-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
     }
     .product-tag {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: .83rem;
-      font-weight: 600;
-      color: var(--soft);
+      color: var(--gold-deep);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .product-action {
-      margin-top: 14px;
+    .product-card h3 {
+      font-size: 1.15rem;
+      margin: 4px 0 6px;
+      color: var(--ink);
+    }
+    .product-desc {
+      color: var(--soft);
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+    .product-foot {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
-      font-size: .82rem;
-      font-weight: 600;
-      color: var(--soft);
+      font-size: 0.84rem;
     }
-    .product-action a {
+    .product-brand-hint {
+      color: var(--soft);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .product-inquire-link {
       color: var(--ink);
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      transition: color .2s;
+      transition: color 0.2s;
     }
-    .product-action a:hover {
+    .product-inquire-link:hover {
       color: var(--brick);
     }
 
-    /* Services */
+    /* Services Section */
     .services-grid {
       display: grid;
-      grid-template-columns: 1.05fr 1.95fr;
-      gap: 65px;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 60px;
+      align-items: start;
     }
-    .services-intro p {
-      max-width: 44ch;
-      margin-top: 24px;
-      color: var(--soft);
-      font-size: 1.05rem;
-    }
-    .service-list {
-      border-top: 1px solid var(--line);
-    }
-    .service {
+    .service-items {
       display: grid;
-      grid-template-columns: 65px 1fr auto;
+      gap: 12px;
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: 46px 1fr auto;
       align-items: center;
       gap: 18px;
-      padding: 24px 16px;
-      border-bottom: 1px solid var(--line);
-      border-radius: 12px;
-      transition: background .2s ease, transform .2s ease;
-      cursor: pointer;
       text-decoration: none;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .service:hover {
-      background: oklch(93% .035 70 / .4);
-      transform: translateX(6px);
+    .service-card:hover {
+      transform: translateX(4px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-sm);
     }
-    .num {
+    .service-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--warm);
       color: var(--gold-deep);
-      font: 1.45rem Fraunces;
+      font: 1.3rem Fraunces, serif;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
     }
-    .service h3 {
-      font-size: 1.25rem;
+    .service-card h3 {
+      font-size: 1.18rem;
       color: var(--ink);
+      margin-bottom: 4px;
     }
-    .service p {
-      margin-top: 5px;
+    .service-card p {
       color: var(--soft);
-      font-size: .92rem;
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
-    .arrow {
+    .service-arrow {
       color: var(--brick);
-      font-size: 1.4rem;
-      transition: transform .2s ease;
+      font-size: 1.3rem;
+      font-weight: 700;
+      transition: transform 0.2s ease;
     }
-    .service:hover .arrow {
+    .service-card:hover .service-arrow {
       transform: translate(3px, -3px);
     }
 
-    /* Promise */
-    .promise {
+    /* Why Us / Promise */
+    .why-section {
       background: var(--plum);
-      color: var(--paper);
+      color: #fff;
     }
-    .promise .wrap {
+    .why-grid {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 80px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 60px;
       align-items: center;
     }
-    .promise h2 { color: var(--paper); }
-    .promise-copy > p {
-      max-width: 45ch;
-      margin-top: 24px;
-      color: oklch(88% .025 72);
+    .why-intro h2 { color: #fff; }
+    .why-intro p {
+      color: rgba(255, 255, 255, 0.82);
       font-size: 1.05rem;
+      line-height: 1.65;
+      margin-top: 16px;
     }
-    .promise-grid {
+    .why-pillars {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 16px;
     }
-    .promise-item {
-      min-height: 145px;
-      padding: 22px;
-      border: 1px solid oklch(99% .008 72 / .2);
+    .pillar-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 18px;
-      background: oklch(99% .008 72 / .08);
-      backdrop-filter: blur(5px);
+      padding: 22px;
+      backdrop-filter: blur(8px);
     }
-    .promise-item b {
+    .pillar-card b {
       display: block;
-      margin-bottom: 9px;
       color: var(--gold);
-      font: 1.55rem Fraunces;
+      font: 1.4rem Fraunces, serif;
+      margin-bottom: 6px;
     }
-    .promise-item span {
-      color: oklch(90% .025 72);
-      font-size: .9rem;
+    .pillar-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .pillar-card p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.86rem;
       line-height: 1.45;
     }
 
-    /* Visit */
-    .visit { padding-bottom: 120px; }
+    /* Visit Section */
     .visit-grid {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
     }
-    .visit-panel {
-      min-height: 320px;
-      padding: 40px;
-      border-radius: 24px;
+    .visit-card {
       background: var(--gold);
+      color: var(--plum);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .visit-panel.dark {
-      background: var(--ink);
-      color: var(--paper);
+    .visit-card h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      color: var(--plum);
     }
-    .visit-panel h2 {
-      max-width: 540px;
-      font-size: clamp(2.3rem, 4vw, 3.8rem);
-    }
-    .address {
-      max-width: 38ch;
-      margin-top: 22px;
+    .visit-address {
       font-size: 1.05rem;
-      line-height: 1.55;
+      line-height: 1.6;
+      margin: 20px 0 28px;
+      max-width: 42ch;
+      font-weight: 500;
     }
-    .visit-panel-actions {
+    .visit-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
     }
-    .visit-panel .btn {
-      background: var(--paper);
-      color: var(--ink);
+    .visit-card .btn {
+      background: var(--plum);
+      color: #fff;
     }
-    .visit-panel .btn:hover {
+    .visit-card .btn:hover {
       background: var(--ink);
-      color: var(--paper);
     }
-    .visit-panel h3 {
+    .visit-card.dark {
+      background: var(--ink);
+      color: #fff;
+    }
+    .visit-card.dark h3 {
       color: var(--gold);
-      font: 1.6rem Fraunces, serif;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
     }
-    .hours {
-      display: grid;
-      gap: 12px;
-      margin-top: 24px;
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 28px;
     }
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid oklch(99% .008 72 / .16);
-      color: oklch(88% .025 72);
-      font-size: .92rem;
+    .hours-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
-    .open {
-      color: var(--mint);
+    .hours-table td {
+      padding: 10px 0;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+    .open-status-text {
+      color: #4ade80 !important;
       font-weight: 700;
     }
-    .closed {
-      color: var(--gold);
+    .closed-status-text {
+      color: #facc15 !important;
       font-weight: 700;
     }
-    .contact-links {
-      margin-top: 20px;
+    .contact-btns {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-    .call-btn {
-      border: 1.5px solid oklch(99% .008 72 / .3);
-      color: var(--paper);
-      min-height: 48px;
+    .call-action-btn {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
     }
-    .call-btn:hover {
-      border-color: var(--gold);
-      background: var(--gold);
-      color: var(--plum);
+    .call-action-btn:hover {
+      background: #fff;
+      color: var(--ink);
+      border-color: #fff;
     }
 
     /* Footer */
     footer {
-      padding: 30px 0 45px;
+      padding: 32px 0 45px;
       border-top: 1px solid var(--line);
       color: var(--soft);
-      font-size: .84rem;
+      font-size: 0.85rem;
     }
     footer .wrap {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
     }
-    
-    /* WhatsApp Floating Button */
-    .wa {
+
+    /* Floating WhatsApp Button */
+    .wa-float {
       position: fixed;
-      right: 22px;
-      bottom: 22px;
+      right: 20px;
+      bottom: calc(20px + env(safe-area-inset-bottom));
       z-index: 1000;
       min-height: 52px;
       padding: 0 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
       border-radius: 999px;
-      background: oklch(58% .18 145);
+      background: #25d366;
       color: #fff;
       font-weight: 700;
-      font-size: .92rem;
-      box-shadow: 0 12px 28px oklch(20% .025 325 / .28);
-      transition: transform .2s ease, box-shadow .2s ease;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .wa:hover {
+    .wa-float:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 16px 32px oklch(20% .025 325 / .35);
+      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
       color: #fff;
     }
-    .wa svg {
-      width: 20px;
-      height: 20px;
+    .wa-float svg {
+      width: 22px;
+      height: 22px;
       fill: currentColor;
     }
 
-    /* Animation */
+    /* Scroll Animation */
     .reveal {
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .7s var(--ease), transform .7s var(--ease);
+      transform: translateY(14px);
+      transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
     }
     .reveal.show {
       opacity: 1;
@@ -967,29 +866,32 @@
     }
     :focus-visible {
       outline: 3px solid var(--brick);
-      outline-offset: 4px;
+      outline-offset: 3px;
     }
 
-    /* Responsive */
-    @media(max-width: 1024px) {
-      .products { grid-template-columns: repeat(3, 1fr); }
+    /* =========================================================
+       RESPONSIVE DESIGN FIXES FOR MOBILE & TABLET
+       ========================================================= */
+    @media (max-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-grid { gap: 36px; }
     }
 
-    @media(max-width: 900px) {
-      .hero-grid, .services-grid, .promise .wrap {
+    @media (max-width: 860px) {
+      .hero-grid, .services-grid, .why-grid, .visit-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 36px;
       }
-      .products { grid-template-columns: repeat(2, 1fr); }
-      .showcase { min-height: 410px; }
-      .promise-grid { max-width: 650px; }
-      .visit-grid { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-pillars { grid-template-columns: 1fr 1fr; }
     }
 
-    @media(max-width: 640px) {
+    @media (max-width: 640px) {
       .wrap { width: calc(100% - 32px); }
+      section { padding: 60px 0; }
       .announce .wrap { justify-content: center; text-align: center; }
-      .navin { min-height: 66px; }
+      
+      /* Navigation Drawer */
       .hamb { display: block; }
       .links {
         display: none;
@@ -997,72 +899,107 @@
         top: 72px;
         left: 16px;
         right: 16px;
-        padding: 18px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 16px;
         flex-direction: column;
         align-items: stretch;
-        gap: 6px;
-        background: var(--paper);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        box-shadow: 0 14px 35px oklch(20% .025 325 / .18);
+        gap: 4px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
         z-index: 1000;
       }
       .links.open { display: flex; }
-      .links a, .links .cta {
-        padding: 12px 14px;
+      .links a {
+        padding: 12px 16px;
         border-radius: 10px;
         text-align: center;
       }
-      .links a:hover {
-        background: var(--warm);
+      .links a:hover { background: var(--warm); }
+      .cta-nav { justify-content: center; margin-top: 6px; }
+
+      /* Hero on Mobile */
+      .hero { padding: 45px 0 60px; }
+      h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+      .hero p { font-size: 1rem; margin: 14px 0 22px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-proof { gap: 14px; font-size: 0.84rem; }
+
+      /* Store Card on Mobile */
+      .store-card { padding: 22px 20px; border-radius: 20px; }
+      .store-card-header { padding-bottom: 14px; margin-bottom: 14px; }
+      .store-card-header h3 { font-size: 1.2rem; }
+
+      /* Products on Mobile */
+      .product-grid { grid-template-columns: 1fr; gap: 14px; }
+      .product-card { padding: 18px; min-height: auto; }
+      .filter-bar { gap: 8px; }
+      .filter-btn { padding: 8px 16px; font-size: 0.85rem; }
+
+      /* Services on Mobile */
+      .service-card {
+        grid-template-columns: 38px 1fr 18px;
+        gap: 14px;
+        padding: 18px;
       }
-      .hero { padding: 55px 0 75px; }
-      h1 { font-size: clamp(2.8rem, 13vw, 4.4rem); }
-      .hero p { font-size: 1.05rem; }
-      .showcase { min-height: 380px; }
-      .phone { width: 200px; height: 380px; }
-      .note { right: -1px; bottom: 20px; width: 165px; }
-      .head { display: block; }
-      .head p { margin-top: 16px; }
-      .products { grid-template-columns: 1fr; gap: 12px; }
-      .product { min-height: auto; padding: 18px; }
-      .visual { height: 110px; }
-      .services-grid { gap: 30px; }
-      .service { grid-template-columns: 37px 1fr 18px; gap: 12px; }
-      .promise .wrap { gap: 32px; }
-      .promise-grid { grid-template-columns: 1fr; gap: 10px; }
-      .promise-item { min-height: auto; padding: 18px; }
-      .visit-panel { min-height: auto; padding: 28px; }
-      footer .wrap { display: block; text-align: center; }
-      footer small { display: block; margin-top: 8px; }
-      .wa { right: 16px; bottom: 16px; padding: 0 16px; font-size: .86rem; }
+      .service-num { width: 38px; height: 38px; font-size: 1.1rem; }
+
+      /* Why Us on Mobile */
+      .why-pillars { grid-template-columns: 1fr; gap: 12px; }
+      .pillar-card { padding: 18px; }
+
+      /* Visit on Mobile */
+      .visit-card { padding: 28px 20px; border-radius: 20px; }
+      .visit-card h2 { font-size: 1.8rem; }
+      .visit-actions { flex-direction: column; }
+      .visit-actions .btn { width: 100%; }
+
+      /* Footer on Mobile */
+      footer .wrap { flex-direction: column; text-align: center; gap: 8px; }
+
+      /* WhatsApp Floating */
+      .wa-float {
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        padding: 0 16px;
+        min-height: 48px;
+        font-size: 0.86rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Top Announcement Bar -->
-  <div class="announce">
+  <header class="announce">
     <div class="wrap">
-      <span><strong>Open 7 Days</strong>, 9:00 AM – 9:00 PM · Behind Gurudwara, Market, Milak</span>
-      <span class="live-status-pill"><span class="live-status-dot" id="announce-dot"></span> <span id="announce-status">Open today</span></span>
+      <span><strong>Open 7 Days</strong> · 9:00 AM to 9:00 PM · Behind Gurudwara, Main Market, Milak</span>
+      <span class="live-badge"><span class="live-dot" id="live-dot-top"></span> <span id="live-text-top">Store Open Today</span></span>
     </div>
-  </div>
+  </header>
 
-  <!-- Header Navigation -->
+  <!-- Sticky Navigation -->
   <nav aria-label="Main Navigation">
     <div class="wrap navin">
-      <a class="brand" href="#home" aria-label="Shyam Communication Home">
-        <span class="mark" aria-hidden="true">S</span>
-        <span>Shyam Communication<small>mobile, made simple</small></span>
+      <a class="brand" href="#home" aria-label="Shyam Communication Milak">
+        <div class="mark" aria-hidden="true">S</div>
+        <div class="brand-text">
+          <span>Shyam Communication</span>
+          <small>Smartphones & Mobile Repair</small>
+        </div>
       </a>
-      <button class="hamb" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
-      <div class="links" id="nav-links">
-        <a href="#shop">Shop</a>
-        <a href="#services">Services</a>
-        <a href="#promise">Why Us</a>
+      
+      <button class="hamb" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      
+      <div class="links" id="main-menu">
+        <a href="#shop">Smartphones & Accessories</a>
+        <a href="#services">Repair & Services</a>
+        <a href="#why-us">Why Us</a>
         <a href="#visit">Visit Store</a>
-        <a class="cta" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20have%20an%20inquiry%20regarding%20a%20phone%2Fservice" target="_blank" rel="noopener">WhatsApp Us ↗</a>
+        <a class="cta-nav" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20have%20an%20inquiry%20regarding%20a%20phone%20or%20repair" target="_blank" rel="noopener">
+          WhatsApp Us ↗
+        </a>
       </div>
     </div>
   </nav>
@@ -1072,233 +1009,289 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="reveal">
-          <div class="eyebrow">Your neighbourhood phone store</div>
-          <h1>Your next phone,<br><em>sorted.</em></h1>
-          <p>New smartphones, genuine accessories, and honest help for every budget. Find what fits you in the heart of Milak, Rampur.</p>
-          <div class="actions">
-            <a class="btn" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20would%20like%20to%20know%20about%20your%20latest%20phones%20and%20offers" target="_blank" rel="noopener">
-              Ask on WhatsApp ↗
+          <div class="eyebrow">Milak's Trusted Mobile Store</div>
+          <h1>All Brand Smartphones & Fast Phone Repair in Milak</h1>
+          <p>
+            Buy genuine 4G & 5G smartphones, original fast chargers, earbuds, and rugged back covers. Fast display replacement, battery fixes, and instant mobile recharges — right in the main market behind Gurudwara.
+          </p>
+          
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20please%20tell%20me%20about%20your%20latest%20phones%20and%20offers" target="_blank" rel="noopener">
+              💬 Ask on WhatsApp
             </a>
             <a class="btn ghost" href="tel:+918650138684">
-              📞 Call Now
+              📞 Call +91 86501 38684
             </a>
-            <a class="btn ghost" href="#shop">See What’s In Store</a>
+            <a class="btn ghost" href="#shop">
+              Explore Store
+            </a>
           </div>
-          <div class="proof">
-            <span><i class="dot" aria-hidden="true"></i> 100% Original Products</span>
-            <span><i class="dot" aria-hidden="true"></i> Trusted Local Advice</span>
-            <span><i class="dot" aria-hidden="true"></i> Expert Repairs</span>
+
+          <div class="hero-proof">
+            <span><i class="proof-dot" aria-hidden="true"></i> 100% Original Sealed Units</span>
+            <span><i class="proof-dot" aria-hidden="true"></i> Fast Same-Day Repair</span>
+            <span><i class="proof-dot" aria-hidden="true"></i> Honest Friendly Guidance</span>
           </div>
         </div>
-        
-        <div class="showcase reveal">
-          <div class="phone" aria-hidden="true">
-            <div class="screen">
-              <h3>Shyam<br>Communication</h3>
-              <div class="screen-line"></div>
-              <div class="screen-phone"></div>
-              <div class="screen-tag">SMART CHOICES, LOCAL TRUST</div>
+
+        <!-- Store Highlights Card -->
+        <div class="store-card reveal">
+          <div class="store-card-header">
+            <div>
+              <h3>Shyam Communication</h3>
+              <small>Milak Market, Rampur (U.P.)</small>
+            </div>
+            <div class="status-pill" id="card-status-pill">
+              <span class="live-dot" id="card-live-dot"></span>
+              <span id="card-status-text">Open Now</span>
             </div>
           </div>
-          <div class="note">
-            <b>A little extra, always.</b>
-            Free special gift with every smartphone purchase. Ask us what’s in store!
+
+          <ul class="store-features">
+            <li class="store-feature-item">
+              <div class="feature-icon">📱</div>
+              <div>
+                <b>Latest 5G Smartphones</b>
+                <span>Vivo, Realme, Redmi, Samsung, OnePlus & Keypad Phones</span>
+              </div>
+            </li>
+            <li class="store-feature-item">
+              <div class="feature-icon">🛠️</div>
+              <div>
+                <b>Fast Mobile Repair</b>
+                <span>Display & glass replacement, battery repair & charging jacks</span>
+              </div>
+            </li>
+            <li class="store-feature-item">
+              <div class="feature-icon">⚡</div>
+              <div>
+                <b>Original Accessories</b>
+                <span>Fast chargers, neckbands, TWS earbuds, tempered glass & cases</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="gift-offer-box">
+            <span>🎁</span>
+            <p><strong>Special In-Store Offer:</strong> Free useful accessory gift with every new smartphone purchase!</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Catalog Section -->
-    <section id="shop" class="catalog">
+    <section id="shop" class="catalog-section">
       <div class="wrap">
-        <div class="head reveal">
-          <div>
-            <div class="eyebrow">What’s in store</div>
-            <h2>Useful tech.<br>No guesswork.</h2>
-          </div>
-          <p>From latest 5G phones to chargers you can rely on, we keep genuine products in stock with clear guidance.</p>
+        <div class="section-head reveal">
+          <div class="eyebrow">Products In Store</div>
+          <h2>Smartphones & Genuine Mobile Accessories</h2>
+          <p>We keep original stock for all major brands. Visit our shop or message us on WhatsApp to check stock and find the right model for you.</p>
         </div>
 
-        <div class="filters reveal" role="group" aria-label="Filter products by category">
-          <button class="filter" aria-pressed="true" data-filter="all">Everything</button>
-          <button class="filter" aria-pressed="false" data-filter="phones">Smartphones</button>
-          <button class="filter" aria-pressed="false" data-filter="audio">Audio & Earphones</button>
-          <button class="filter" aria-pressed="false" data-filter="power">Chargers & Cables</button>
-          <button class="filter" aria-pressed="false" data-filter="wearables">Wearables & Covers</button>
+        <div class="filter-bar reveal" role="group" aria-label="Filter products">
+          <button class="filter-btn" aria-pressed="true" data-filter="all">All Items</button>
+          <button class="filter-btn" aria-pressed="false" data-filter="phones">Smartphones</button>
+          <button class="filter-btn" aria-pressed="false" data-filter="audio">Earbuds & Audio</button>
+          <button class="filter-btn" aria-pressed="false" data-filter="power">Chargers & Power</button>
+          <button class="filter-btn" aria-pressed="false" data-filter="wearables">Watches & Protection</button>
         </div>
 
-        <div class="products reveal">
-          <!-- Item 1: Phones -->
-          <article class="product" data-category="phones">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">5G Ready · All Brands</div>
+        <div class="product-grid reveal">
+          <!-- 1: 5G Phones -->
+          <article class="product-card" data-category="phones">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+              </div>
+              <span class="product-tag">5G Ready</span>
               <h3>Latest 5G Smartphones</h3>
-              <span class="product-tag">All Major Brands & Models</span>
+              <p class="product-desc">Brand-sealed new smartphones with full company warranty and fast processing.</p>
             </div>
-            <div class="product-action">
-              <span>Vivo, Realme, Redmi, Samsung</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20what%205G%20phones%20are%20available%20at%20Shyam%20Communication%3F" target="_blank" rel="noopener">Inquire ↗</a>
-            </div>
-          </article>
-
-          <!-- Item 2: Phones Flagship -->
-          <article class="product" data-category="phones">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Camera & Performance</div>
-              <h3>Flagship Smartphones</h3>
-              <span class="product-tag">High-End Cameras & Processors</span>
-            </div>
-            <div class="product-action">
-              <span>Pro Display & Build</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20I%20want%20to%20know%20about%20flagship%20phones%20in%20store." target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">Vivo, Realme, Redmi, Samsung</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20which%205G%20phones%20are%20available%20at%20Shyam%20Communication%3F" target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
 
-          <!-- Item 3: Feature & Budget Phones -->
-          <article class="product" data-category="phones">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Everyday Reliability</div>
-              <h3>Keypad & Budget Phones</h3>
-              <span class="product-tag">Long Battery & Tough Build</span>
+          <!-- 2: Flagship & Camera Phones -->
+          <article class="product-card" data-category="phones">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/></svg>
+              </div>
+              <span class="product-tag">Premium Performance</span>
+              <h3>Flagship & Camera Phones</h3>
+              <p class="product-desc">High-resolution pro cameras, vivid AMOLED displays, and high-performance processors.</p>
             </div>
-            <div class="product-action">
-              <span>Simple & Durable</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20I%20am%20looking%20for%20a%20keypad%20phone." target="_blank" rel="noopener">Inquire ↗</a>
-            </div>
-          </article>
-
-          <!-- Item 4: Audio TWS -->
-          <article class="product" data-category="audio">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Wireless Freedom</div>
-              <h3>True Wireless Earbuds</h3>
-              <span class="product-tag">Noise Cancellation & Mic</span>
-            </div>
-            <div class="product-action">
-              <span>Deep Bass Sound</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20what%20TWS%20wireless%20earbuds%20do%20you%20have%20in%20stock%3F" target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">Top Models Available</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20tell%20me%20about%20camera%20and%20flagship%20phones%20available." target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
 
-          <!-- Item 5: Audio Neckband -->
-          <article class="product" data-category="audio">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Sound on the Go</div>
+          <!-- 3: Keypad & Budget Phones -->
+          <article class="product-card" data-category="phones">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm-2 20h-4v-1h4v1zm3-3H7V4h10v14z"/></svg>
+              </div>
+              <span class="product-tag">Daily Reliability</span>
+              <h3>Keypad & Feature Phones</h3>
+              <p class="product-desc">Long battery backup, crystal clear loud speakers, and rugged durable bodies.</p>
+            </div>
+            <div class="product-foot">
+              <span class="product-brand-hint">Jio, Itel, Nokia, Samsung</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20I%20am%20looking%20for%20a%20keypad%20phone%20at%20your%20shop." target="_blank" rel="noopener">Inquire ↗</a>
+            </div>
+          </article>
+
+          <!-- 4: TWS Earbuds -->
+          <article class="product-card" data-category="audio">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              </div>
+              <span class="product-tag">Wireless Audio</span>
+              <h3>True Wireless Earbuds (TWS)</h3>
+              <p class="product-desc">Deep bass, environmental noise cancellation (ENC), and compact charging cases.</p>
+            </div>
+            <div class="product-foot">
+              <span class="product-brand-hint">boAt, Noise, Boult, Realme</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20what%20TWS%20wireless%20earbuds%20do%20you%20have%20in%20stock%3F" target="_blank" rel="noopener">Inquire ↗</a>
+            </div>
+          </article>
+
+          <!-- 5: Bluetooth Neckbands -->
+          <article class="product-card" data-category="audio">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
+              </div>
+              <span class="product-tag">Comfort Fit</span>
               <h3>Bluetooth Neckbands</h3>
-              <span class="product-tag">Fast Charge & HD Voice</span>
+              <p class="product-desc">Fast charging, HD voice calling mic, and long battery life up to 40 hours.</p>
             </div>
-            <div class="product-action">
-              <span>Extended Battery Life</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20show%20me%20Bluetooth%20neckbands%20available." target="_blank" rel="noopener">Inquire ↗</a>
-            </div>
-          </article>
-
-          <!-- Item 6: Bluetooth Speakers -->
-          <article class="product" data-category="audio">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Music Anywhere</div>
-              <h3>Portable BT Speakers</h3>
-              <span class="product-tag">Clear Bass & Splash Proof</span>
-            </div>
-            <div class="product-action">
-              <span>Wireless Connectivity</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20tell%20me%20about%20portable%20Bluetooth%20speakers." target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">All Top Audio Brands</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20show%20me%20available%20Bluetooth%20neckbands." target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
 
-          <!-- Item 7: Fast Chargers -->
-          <article class="product" data-category="power">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Super Fast Charging</div>
+          <!-- 6: Bluetooth Speakers -->
+          <article class="product-card" data-category="audio">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 16c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </div>
+              <span class="product-tag">Loud Sound</span>
+              <h3>Portable Bluetooth Speakers</h3>
+              <p class="product-desc">Compact, splash-proof, punchy bass speakers with FM and memory card support.</p>
+            </div>
+            <div class="product-foot">
+              <span class="product-brand-hint">Long Battery Playback</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20tell%20me%20about%20Bluetooth%20speakers%20in%20stock." target="_blank" rel="noopener">Inquire ↗</a>
+            </div>
+          </article>
+
+          <!-- 7: Fast Chargers -->
+          <article class="product-card" data-category="power">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+              </div>
+              <span class="product-tag">Original Adapters</span>
               <h3>Fast Charging Adapters</h3>
-              <span class="product-tag">Original Certified Quality</span>
+              <p class="product-desc">Safe, genuine fast chargers (18W, 33W, 67W, 80W) compatible with all brands.</p>
             </div>
-            <div class="product-action">
-              <span>Type-C & Multi-Brand</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20do%20you%20have%20fast%20chargers%20for%20my%20phone%3F" target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">Type-C & Multi-Port</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20do%20you%20have%20an%20original%20fast%20charger%20for%20my%20phone%3F" target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
 
-          <!-- Item 8: Cables & Power Banks -->
-          <article class="product" data-category="power">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Heavy Duty Power</div>
+          <!-- 8: Cables & Power Banks -->
+          <article class="product-card" data-category="power">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M15 7v4h1v2h-1v4h-2v-4h-2v4H9v-4H8v-2h1V7h6m1-2H8c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2z"/></svg>
+              </div>
+              <span class="product-tag">Heavy Duty Power</span>
               <h3>Braided Cables & Power Banks</h3>
-              <span class="product-tag">High Capacity & Safe Charge</span>
+              <p class="product-desc">Tangle-free unbreakable charging cables and 10000mAh / 20000mAh backup banks.</p>
             </div>
-            <div class="product-action">
-              <span>Tangle-Free & Durable</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20I%20need%20a%20power%20bank%20or%20charging%20cable." target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">Type-C, iPhone, Micro USB</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20I%20need%20a%20power%20bank%20or%20charging%20cable." target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
 
-          <!-- Item 9: Smartwatches -->
-          <article class="product" data-category="wearables">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Fitness & Style</div>
+          <!-- 9: Smartwatches -->
+          <article class="product-card" data-category="wearables">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M16.5 6l-.7-3.5h-7.6L7.5 6A5.99 5.99 0 0 0 6 10v4a5.99 5.99 0 0 0 1.5 4l.7 3.5h7.6l.7-3.5A5.99 5.99 0 0 0 18 14v-4c0-1.54-.58-2.94-1.5-4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
+              </div>
+              <span class="product-tag">Smart Fitness</span>
               <h3>Calling Smartwatches</h3>
-              <span class="product-tag">HD Touch Display & Sensors</span>
+              <p class="product-desc">Bluetooth phone calling, heart rate & SpO2 health tracking with vibrant HD touchscreens.</p>
             </div>
-            <div class="product-action">
-              <span>Bluetooth Calling</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20show%20me%20smartwatches%20available%20in%20store." target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">Fire-Boltt, Noise, boAt</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20show%20me%20smartwatches%20available%20in%20store." target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
 
-          <!-- Item 10: Tempered Glass & Skins -->
-          <article class="product" data-category="wearables">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Screen Protection</div>
+          <!-- 10: Tempered Glass -->
+          <article class="product-card" data-category="wearables">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+              </div>
+              <span class="product-tag">Screen Guard</span>
               <h3>9H Tempered & UV Glass</h3>
-              <span class="product-tag">Edge-to-Edge Protection</span>
+              <p class="product-desc">Edge-to-edge scratch protection with bubble-free professional fitting at the store.</p>
             </div>
-            <div class="product-action">
-              <span>Professional Fitting</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20I%20need%20tempered%20glass%20installed%20for%20my%20phone." target="_blank" rel="noopener">Inquire ↗</a>
-            </div>
-          </article>
-
-          <!-- Item 11: Mobile Cases & Covers -->
-          <article class="product" data-category="wearables">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Protection & Style</div>
-              <h3>Premium Back Covers</h3>
-              <span class="product-tag">Shockproof & Slim Grip</span>
-            </div>
-            <div class="product-action">
-              <span>For All Phone Models</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20do%20you%20have%20back%20covers%20for%20my%20phone%20model%3F" target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">Free Clean Installation</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20I%20need%20tempered%20glass%20for%20my%20phone." target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
 
-          <!-- Item 12: Memory & OTG -->
-          <article class="product" data-category="power">
-            <div class="visual"><div class="shape" aria-hidden="true"></div></div>
-            <div class="product-info">
-              <div class="kicker">Storage & Transfer</div>
-              <h3>SD Cards & OTG Drives</h3>
-              <span class="product-tag">High-Speed Data Sync</span>
+          <!-- 11: Mobile Covers -->
+          <article class="product-card" data-category="wearables">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></svg>
+              </div>
+              <span class="product-tag">Grip & Protection</span>
+              <h3>Shockproof Back Covers</h3>
+              <p class="product-desc">Wide collection of stylish, slim silicone, and rugged protective phone cases.</p>
             </div>
-            <div class="product-action">
-              <span>Multiple Sizes Available</span>
-              <a href="https://wa.me/918650138684?text=Hi%2C%20what%20memory%20cards%20or%20pen%20drives%20do%20you%20have%3F" target="_blank" rel="noopener">Inquire ↗</a>
+            <div class="product-foot">
+              <span class="product-brand-hint">For All Mobile Models</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20do%20you%20have%20a%20back%20cover%20for%20my%20phone%3F" target="_blank" rel="noopener">Inquire ↗</a>
+            </div>
+          </article>
+
+          <!-- 12: Memory & OTG -->
+          <article class="product-card" data-category="power">
+            <div>
+              <div class="product-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-8L4 8v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm4-10H8V6h8v1z"/></svg>
+              </div>
+              <span class="product-tag">Storage & Sync</span>
+              <h3>Memory Cards & OTG Drives</h3>
+              <p class="product-desc">High-speed Class 10 MicroSD cards and dual-connector phone flash drives.</p>
+            </div>
+            <div class="product-foot">
+              <span class="product-brand-hint">SanDisk, Kingston (Original)</span>
+              <a class="product-inquire-link" href="https://wa.me/918650138684?text=Hi%2C%20what%20memory%20cards%20or%20pen%20drives%20do%20you%20have%3F" target="_blank" rel="noopener">Inquire ↗</a>
             </div>
           </article>
         </div>
 
-        <p id="empty" class="muted" style="display:none;margin-top:28px;text-align:center;font-size:1.1rem;">
-          That shelf is being updated for now. Message us on WhatsApp and we will immediately check stock for you!
+        <p id="empty-catalog-msg" style="display:none;margin-top:28px;text-align:center;font-size:1.05rem;color:var(--soft);">
+          Item not listed? Send us a message on WhatsApp and we will quickly arrange it for you!
         </p>
       </div>
     </section>
@@ -1306,138 +1299,156 @@
     <!-- Services Section -->
     <section id="services">
       <div class="wrap services-grid">
-        <div class="services-intro reveal">
-          <div class="eyebrow">More than a counter</div>
-          <h2>Small fixes.<br>Big relief.</h2>
-          <p>Need a fast display repair, battery replacement, quick recharge, or the right cover? Bring your phone in. We sort the practical stuff without the runaround.</p>
-          <div style="margin-top: 28px;">
-            <a href="tel:+918650138684" class="btn">📞 Call for Repair Inquiry</a>
+        <div class="reveal">
+          <div class="eyebrow">Mobile Repair & Services</div>
+          <h2>Fast & Reliable Phone Repair in Milak</h2>
+          <p>
+            Cracked display, drained battery, charging jack issues, or need a quick SIM recharge? Visit our shop in Milak market for quick turnaround and quality replacement parts.
+          </p>
+          <div style="margin-top: 24px;">
+            <a class="btn" href="tel:+918650138684">
+              📞 Call for Repair Estimate
+            </a>
           </div>
         </div>
 
-        <div class="service-list reveal">
-          <a class="service" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20need%20mobile%20repair%20help%20for%20my%20phone." target="_blank" rel="noopener">
-            <div class="num">01</div>
+        <div class="service-items reveal">
+          <a class="service-card" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20need%20help%20with%20screen%20or%20battery%20repair." target="_blank" rel="noopener">
+            <div class="service-num">01</div>
             <div>
-              <h3>Mobile Screen & Battery Repair</h3>
-              <p>Display replacement, battery fixes, charging port repair & IC issues handled with care.</p>
+              <h3>Display & Battery Replacement</h3>
+              <p>Broken glass, touch display replacement, fast-draining battery fixes & original battery replacement.</p>
             </div>
-            <div class="arrow" aria-hidden="true">↗</div>
+            <div class="service-arrow" aria-hidden="true">↗</div>
           </a>
 
-          <a class="service" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20want%20to%20do%20a%20mobile%20recharge%20%2F%20bill%20payment." target="_blank" rel="noopener">
-            <div class="num">02</div>
+          <a class="service-card" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20need%20help%20with%20charging%20port%20or%20speaker%20repair." target="_blank" rel="noopener">
+            <div class="service-num">02</div>
             <div>
-              <h3>Instant Mobile Recharge & SIM Services</h3>
-              <p>Quick recharges, prepaid plans & DTH recharges for Jio, Airtel, Vi, and BSNL.</p>
+              <h3>Charging Port & Speaker Fixes</h3>
+              <p>Loose charging jacks, mic and speaker distortion, headphone socket issues, and motherboard checkups.</p>
             </div>
-            <div class="arrow" aria-hidden="true">↗</div>
+            <div class="service-arrow" aria-hidden="true">↗</div>
           </a>
 
-          <a class="service" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20need%20help%20with%20phone%20accessories%20or%20glass%20fitting." target="_blank" rel="noopener">
-            <div class="num">03</div>
+          <a class="service-card" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20want%20to%20do%20a%20mobile%20recharge%20or%20bill%20payment." target="_blank" rel="noopener">
+            <div class="service-num">03</div>
             <div>
-              <h3>Accessory Fitting & Tempered Glass</h3>
-              <p>Bubble-free glass installation, high-grade cases, audio gear, and heavy cables.</p>
+              <h3>Instant Mobile Recharge & SIM Plans</h3>
+              <p>Quick recharges, unlimited calling plans, data packs, and DTH recharges for Jio, Airtel, Vi & BSNL.</p>
             </div>
-            <div class="arrow" aria-hidden="true">↗</div>
+            <div class="service-arrow" aria-hidden="true">↗</div>
           </a>
 
-          <a class="service" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20need%20help%20with%20data%20transfer%20or%20phone%20setup." target="_blank" rel="noopener">
-            <div class="num">04</div>
+          <a class="service-card" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20need%20help%20transferring%20data%20to%20my%20new%20phone." target="_blank" rel="noopener">
+            <div class="service-num">04</div>
             <div>
-              <h3>New Phone Setup & Data Transfer</h3>
-              <p>Smooth WhatsApp & contacts migration from old to new phone, with expert setup.</p>
+              <h3>New Phone Setup & WhatsApp Data Transfer</h3>
+              <p>Safe data transfer (contacts, photos, WhatsApp chats) from your old phone to your new smartphone.</p>
             </div>
-            <div class="arrow" aria-hidden="true">↗</div>
+            <div class="service-arrow" aria-hidden="true">↗</div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Promise Section -->
-    <section id="promise" class="promise">
-      <div class="wrap">
-        <div class="promise-copy reveal">
-          <div class="eyebrow" style="color:var(--gold)">The Shyam standard</div>
-          <h2>Buy with<br>confidence.</h2>
-          <p>We’re building the kind of local shop people come back to: fair dealings, 100% genuine products, and a welcome that’s always real.</p>
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-section">
+      <div class="wrap why-grid">
+        <div class="why-intro reveal">
+          <div class="eyebrow" style="color:var(--gold)">Why Shyam Communication</div>
+          <h2>Local Trust & Honest Service in Milak</h2>
+          <p>
+            We are dedicated to serving our customers with genuine products, fair treatment, and dependable after-sales repair support.
+          </p>
         </div>
 
-        <div class="promise-grid reveal">
-          <div class="promise-item">
+        <div class="why-pillars reveal">
+          <div class="pillar-card">
             <b>01</b>
-            <span>Honest advice and transparent service without sales pressure.</span>
+            <h4>100% Original Products</h4>
+            <p>Every smartphone and accessory is 100% original with valid company brand warranty.</p>
           </div>
-          <div class="promise-item">
+
+          <div class="pillar-card">
             <b>02</b>
-            <span>100% original products and certified accessories.</span>
+            <h4>Fast & Careful Repairs</h4>
+            <p>Skilled repair work using quality replacement parts so your phone works like new.</p>
           </div>
-          <div class="promise-item">
+
+          <div class="pillar-card">
             <b>03</b>
-            <span>Reliable, transparent, and customer-first support.</span>
+            <h4>Honest Advice</h4>
+            <p>We help you choose the best phone within your budget without pushing unwanted items.</p>
           </div>
-          <div class="promise-item">
+
+          <div class="pillar-card">
             <b>04</b>
-            <span>A free special gift with every smartphone & device purchase.</span>
+            <h4>Free Special Gift</h4>
+            <p>Enjoy a complimentary accessory gift with every new smartphone purchased at our store.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Visit Store Section -->
-    <section id="visit" class="visit">
+    <section id="visit">
       <div class="wrap">
-        <div class="head reveal">
-          <div>
-            <div class="eyebrow">Come say hello</div>
-            <h2>Find us in Milak.</h2>
-          </div>
-          <p>Pop in for a look, a repair, a recharge, or just an honest second opinion before you buy your next phone.</p>
+        <div class="section-head reveal">
+          <div class="eyebrow">Store Location</div>
+          <h2>Visit Our Shop in Milak Market</h2>
+          <p>Drop by to check out the latest phones, get a screen fitted, recharge your number, or get your phone repaired.</p>
         </div>
 
         <div class="visit-grid">
-          <!-- Left Panel: Address & Directions -->
-          <div class="visit-panel reveal">
-            <h2>Right behind the Gurudwara, in the Market.</h2>
-            <p class="address">
-              <strong>Shyam Communication</strong><br>
-              Gurudwara ke Picha (Behind Gurudwara), Main Market,<br>
-              Tehsil Milak, Distt. Rampur, Uttar Pradesh 243701, India
-            </p>
-            <div class="visit-panel-actions">
+          <!-- Address Card -->
+          <div class="visit-card reveal">
+            <div>
+              <h2>Right Behind Gurudwara in the Market</h2>
+              <p class="visit-address">
+                <strong>Shyam Communication</strong><br>
+                Gurudwara ke Picha (Behind Gurudwara), Main Market,<br>
+                Tehsil Milak, Distt. Rampur, Uttar Pradesh – 243701
+              </p>
+            </div>
+            <div class="visit-actions">
               <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Shyam+Communication+Milak+Rampur+Uttar+Pradesh" target="_blank" rel="noopener">
                 📍 Open in Google Maps ↗
               </a>
-              <a class="btn ghost" href="https://wa.me/918650138684?text=Hi%2C%20please%20send%20me%20your%20exact%20shop%20location%20in%20Milak" target="_blank" rel="noopener">
-                Get Location on WhatsApp ↗
+              <a class="btn" href="https://wa.me/918650138684?text=Hi%2C%20please%20send%20me%20your%20exact%20shop%20location%20in%20Milak" target="_blank" rel="noopener">
+                💬 Location on WhatsApp
               </a>
             </div>
           </div>
 
-          <!-- Right Panel: Working Hours & Instant Contact -->
-          <div class="visit-panel dark reveal">
-            <h3>Store Hours</h3>
-            <div class="hours">
-              <div class="hours-row">
-                <span>Monday – Sunday</span>
-                <span>9:00 AM – 9:00 PM</span>
-              </div>
-              <div class="hours-row">
-                <span>Today's Status</span>
-                <span id="status" class="open">Checking hours...</span>
-              </div>
+          <!-- Hours & Direct Contact -->
+          <div class="visit-card dark reveal">
+            <div>
+              <h3>Working Hours</h3>
+              <table class="hours-table">
+                <tbody>
+                  <tr>
+                    <td>Monday – Sunday</td>
+                    <td>9:00 AM – 9:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Today's Status</td>
+                    <td id="visit-status-text" class="open-status-text">Checking hours...</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 style="margin-top:24px">Direct Contact</h3>
+              <p style="font-size:1.15rem;font-weight:700;margin-bottom:16px;color:var(--gold);">
+                +91 86501 38684
+              </p>
             </div>
 
-            <h3 style="margin-top:36px">Contact Directly</h3>
-            <p style="margin-top:8px;font-size:1.15rem;font-weight:700;">
-              <a href="tel:+918650138684" style="color:var(--gold);text-decoration:underline;">+91 86501 38684</a>
-            </p>
-            <div class="contact-links">
-              <a href="tel:+918650138684" class="btn call-btn">
-                📞 One-Tap Phone Call
+            <div class="contact-btns">
+              <a class="btn call-action-btn" href="tel:+918650138684">
+                📞 Call Now (+91 86501 38684)
               </a>
-              <a href="https://wa.me/918650138684" target="_blank" rel="noopener" class="btn gold">
+              <a class="btn gold" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20have%20a%20question" target="_blank" rel="noopener">
                 💬 Direct WhatsApp Chat
               </a>
             </div>
@@ -1447,8 +1458,8 @@
     </section>
   </main>
 
-  <!-- Floating WhatsApp CTA Button -->
-  <a class="wa" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20have%20an%20inquiry" target="_blank" rel="noopener" aria-label="Chat directly with Shyam Communication on WhatsApp">
+  <!-- Floating WhatsApp CTA -->
+  <a class="wa-float" href="https://wa.me/918650138684?text=Hello%20Shyam%20Communication%2C%20I%20have%20an%20inquiry" target="_blank" rel="noopener" aria-label="Chat directly with Shyam Communication on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.07c-.24.68-1.2 1.25-1.68 1.33-.45.08-1.02.11-3.29-.83-2.9-1.2-4.78-4.14-4.93-4.33-.14-.19-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.26-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2.02.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.77 1.27 1.65 2.05 1.13 1.01 2.09 1.32 2.38 1.47.3.14.47.12.65-.08.17-.2.74-.86.94-1.16.2-.29.39-.24.66-.14.26.1 1.68.79 1.97.94.29.15.49.22.56.34.07.12.07.72-.17 1.4z"/></svg>
     <span>WhatsApp Us</span>
   </a>
@@ -1457,119 +1468,113 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Shyam Communication. All rights reserved.</span>
-      <small>Behind Gurudwara, Market, Milak, Rampur (U.P.) · Genuine phones, repairs & accessories</small>
+      <span>Behind Gurudwara, Main Market, Milak, Rampur (U.P.) · +91 86501 38684</span>
     </div>
   </footer>
 
-  <!-- Interactive JavaScript Logic -->
+  <!-- Script Logic -->
   <script>
-    // 1. Mobile Navigation Toggle & Smooth Auto-Close
-    const menuBtn = document.querySelector('.hamb');
-    const linksContainer = document.querySelector('.links');
+    // 1. Mobile Menu Toggle & Auto-Close
+    const menuToggle = document.querySelector('.hamb');
+    const navMenu = document.querySelector('.links');
 
-    if (menuBtn && linksContainer) {
-      menuBtn.addEventListener('click', (e) => {
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isOpen = linksContainer.classList.toggle('open');
-        menuBtn.setAttribute('aria-expanded', isOpen);
+        const isOpen = navMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
       });
 
-      // Close menu when clicking navigation links
-      linksContainer.querySelectorAll('a').forEach(link => {
+      navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          linksContainer.classList.remove('open');
-          menuBtn.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
         });
       });
 
-      // Close mobile menu if clicked outside
       document.addEventListener('click', (e) => {
-        if (!linksContainer.contains(e.target) && !menuBtn.contains(e.target)) {
-          linksContainer.classList.remove('open');
-          menuBtn.setAttribute('aria-expanded', 'false');
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          navMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
         }
       });
 
-      // Close on Escape key press
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-          linksContainer.classList.remove('open');
-          menuBtn.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
         }
       });
     }
 
-    // 2. Product Catalog Filter System
-    const filterButtons = document.querySelectorAll('.filter');
-    const productItems = document.querySelectorAll('.product');
-    const emptyNotice = document.querySelector('#empty');
+    // 2. Product Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    const emptyNotice = document.querySelector('#empty-catalog-msg');
 
-    filterButtons.forEach(btn => {
+    filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const targetCategory = btn.dataset.filter;
+        const cat = btn.dataset.filter;
+        filterBtns.forEach(b => b.setAttribute('aria-pressed', b === btn));
         
-        filterButtons.forEach(b => b.setAttribute('aria-pressed', b === btn));
-        
-        let visibleCount = 0;
-        productItems.forEach(card => {
-          const matches = targetCategory === 'all' || card.dataset.category === targetCategory;
-          card.style.display = matches ? 'flex' : 'none';
-          if (matches) visibleCount++;
+        let count = 0;
+        productCards.forEach(card => {
+          const show = cat === 'all' || card.dataset.category === cat;
+          card.style.display = show ? 'flex' : 'none';
+          if (show) count++;
         });
 
         if (emptyNotice) {
-          emptyNotice.style.display = visibleCount > 0 ? 'none' : 'block';
+          emptyNotice.style.display = count > 0 ? 'none' : 'block';
         }
       });
     });
 
-    // 3. Dynamic Business Operating Hours Checker (9:00 AM – 9:00 PM)
-    function updateShopHoursStatus() {
+    // 3. Dynamic Operating Hours Status
+    function checkStoreHours() {
       const now = new Date();
-      const currentHour = now.getHours();
-      const isOpen = currentHour >= 9 && currentHour < 21;
+      const hour = now.getHours();
+      const isOpen = hour >= 9 && hour < 21;
 
-      const statusEl = document.querySelector('#status');
-      const announceStatusEl = document.querySelector('#announce-status');
-      const announceDotEl = document.querySelector('#announce-dot');
+      const liveDotTop = document.querySelector('#live-dot-top');
+      const liveTextTop = document.querySelector('#live-text-top');
+      const cardLiveDot = document.querySelector('#card-live-dot');
+      const cardStatusText = document.querySelector('#card-status-text');
+      const visitStatusText = document.querySelector('#visit-status-text');
 
       if (isOpen) {
-        if (statusEl) {
-          statusEl.textContent = 'Open now · Closes at 9:00 PM';
-          statusEl.className = 'open';
-        }
-        if (announceStatusEl) {
-          announceStatusEl.textContent = 'Open now (until 9:00 PM)';
-        }
-        if (announceDotEl) {
-          announceDotEl.className = 'live-status-dot';
+        if (liveDotTop) liveDotTop.className = 'live-dot';
+        if (liveTextTop) liveTextTop.textContent = 'Open now (until 9:00 PM)';
+        if (cardLiveDot) cardLiveDot.className = 'live-dot';
+        if (cardStatusText) cardStatusText.textContent = 'Open Now';
+        if (visitStatusText) {
+          visitStatusText.textContent = 'Open now · Closes at 9:00 PM';
+          visitStatusText.className = 'open-status-text';
         }
       } else {
-        if (statusEl) {
-          statusEl.textContent = 'Closed now · Opens at 9:00 AM';
-          statusEl.className = 'closed';
-        }
-        if (announceStatusEl) {
-          announceStatusEl.textContent = 'Closed now (Opens at 9:00 AM)';
-        }
-        if (announceDotEl) {
-          announceDotEl.className = 'live-status-dot closed';
+        if (liveDotTop) liveDotTop.className = 'live-dot closed';
+        if (liveTextTop) liveTextTop.textContent = 'Closed now (Opens at 9:00 AM)';
+        if (cardLiveDot) cardLiveDot.className = 'live-dot closed';
+        if (cardStatusText) cardStatusText.textContent = 'Closed Now';
+        if (visitStatusText) {
+          visitStatusText.textContent = 'Closed now · Opens at 9:00 AM';
+          visitStatusText.className = 'closed-status-text';
         }
       }
     }
-    updateShopHoursStatus();
+    checkStoreHours();
 
-    // 4. Scroll Reveal Observer
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    // 4. Scroll Reveal Animations
+    const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
-          observer.unobserve(entry.target);
+          obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
