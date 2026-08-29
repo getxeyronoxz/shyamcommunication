@@ -195,25 +195,28 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,600..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,600..800&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --ink: #1e1b22;
-      --soft: #55505e;
-      --paper: #faf8f5;
-      --warm: #f2ede4;
-      --line: #ded7cb;
-      --gold: #d99726;
-      --gold-deep: #a86c0d;
-      --brick: #9c3628;
-      --plum: #3a1639;
-      --mint: #108e56;
-      --mint-light: #e6f6ee;
+      --ink: #18151c;
+      --soft: #4e4a56;
+      --paper: #fcfaf7;
+      --warm: #f5f0e6;
+      --line: #e3dccf;
+      --gold: #e5a024;
+      --gold-light: #fef5e7;
+      --gold-deep: #965e08;
+      --brick: #aa3322;
+      --brick-hover: #8f2819;
+      --plum: #2e122d;
+      --plum-soft: #3f193d;
+      --mint: #0d824e;
+      --mint-light: #e6f7ef;
       --ease: cubic-bezier(.16, 1, .3, 1);
-      --shadow-sm: 0 4px 14px rgba(30, 27, 34, 0.06);
-      --shadow-md: 0 12px 30px rgba(30, 27, 34, 0.08);
-      --shadow-lg: 0 20px 48px rgba(30, 27, 34, 0.12);
+      --shadow-sm: 0 4px 16px rgba(24, 21, 28, 0.05);
+      --shadow-md: 0 12px 32px rgba(24, 21, 28, 0.08);
+      --shadow-lg: 0 22px 50px rgba(24, 21, 28, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -221,9 +224,11 @@
     body {
       background: var(--paper);
       color: var(--ink);
-      font: 16px/1.6 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font: 16px/1.65 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       overflow-x: hidden;
       width: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     a { text-decoration: none; color: inherit; }
     button { font: inherit; }
@@ -403,8 +408,8 @@
     }
     .btn:hover {
       transform: translateY(-2px);
-      background: var(--brick);
-      box-shadow: 0 8px 20px rgba(156, 54, 40, 0.25);
+      background: var(--brick-hover);
+      box-shadow: 0 8px 20px rgba(170, 51, 34, 0.25);
       color: #fff;
     }
     .btn.ghost {
